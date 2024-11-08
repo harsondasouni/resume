@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather of Cities</title>
+    <script src="script.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            background-image: url('https://wmo.int/sites/default/files/styles/featured_image_x1_768x512/public/2023-12/thumbnails_5.jpg?h=d1cb525d&itok=aZ4qUGTc');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #1a73e8;
+        }
+
+        h1 {
+            color: #1a73e8;
+        }
+
+        h2 {
+            color: #007bff;
+        }
+
+        h3 {
+            color: #007bff;
+        }
+
+        p {
+            color: #110101;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        section {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .weather-card {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 10px;
+            color: #333;
+        }
+
+        /* Double the size of images */
+        .weather-card img {
+            width: 120px; /* doubled from 60px */
+            height: 120px; /* doubled from 60px */
+            margin-left: 15px;
+        }
+
+        .weather-card div {
+            text-align: left;
+        }
+
+        button {
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .developer-profile {
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 40px;
+        }
+
+        .developer-profile img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+
+        .developer-profile h3 {
+            color: #007bff;
+            font-size: 24px;
+            margin: 10px 0;
+        }
+
+        .developer-profile p {
+            font-size: 18px;
+            color: #333;
+        }
+
+        .developer-profile a {
+            color: #1a73e8;
+            text-decoration: none;
+        }
+
+        .developer-profile a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Weather Details of Cities</h1>
+    </header>
+
+    <section id="weather-output">
+        <!-- Punjab - Sunny Weather -->
+        <div class="weather-card">
+            <div>
+                <h3>Punjab</h3>
+                <p>Temperature: 33°C</p>
+                <p>Feels Like: 35°C</p>
+                <p>Humidity: 50%</p>
+            </div>
+            <img src="https://imgs.search.brave.com/xPMfnF6CFVhnkpNqFKk8SECs1xLe5eqelkxzqdTuxKw/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTMx/MjU5NjkyMS9waG90/by9zdW1tZXItbm9v/bi1zdW4uanBnP3M9/NjEyeDYxMiZ3PTAm/az0yMCZjPTFhYUZM/SVdIMTV6U1dtbmVu/bUw1MFhma2lVMHNV/Ym9FS3BJWGYzSng1/UzA9" alt="Sunny Weather">
+        </div>
+
+        <!-- Rajasthan - Hot Weather -->
+        <div class="weather-card">
+            <div>
+                <h3>Rajasthan</h3>
+                <p>Temperature: 42°C</p>
+                <p>Feels Like: 45°C</p>
+                <p>Humidity: 20%</p>
+            </div>
+            <img src="https://imgs.search.brave.com/yOROhynXtyO3sVASJSGZr3NVOlnusHNiDwFHaio-II4/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTE4/MTI0MDkyMC9waG90/by9ob3QtYXJpZC1j/bGltYXRlLWxhbmRz/Y2FwZS5qcGc_cz02/MTJ4NjEyJnc9MCZr/PTIwJmM9TnY5dFZz/ckZRMmx3SnBUZXJr/cTVnQThaUmdVSzZS/WXFsanM5WHBHVkdN/RT0" alt="Hot Weather">
+        </div>
+
+        <!-- Kerala - Cloudy Weather -->
+        <div class="weather-card">
+            <div>
+                <h3>Kerala</h3>
+                <p>Temperature: 28°C</p>
+                <p>Feels Like: 30°C</p>
+                <p>Humidity: 85%</p>
+            </div>
+            <img src="https://imgs.search.brave.com/jzSrMdjUit4iEWx26YIpHPRxI6wiSqC71VSWChNQU_I/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTA4/OTk4NjM0Ni9waG90/by9yYWluLWNsb3Vk/LmpwZz9zPTYxMng2/MTImdz0wJms9MjAm/Yz1FblRUS1ZKTFF6/T09NcUlCZDVxZXRx/am5kTjZ4QnM3NFZF/c1l2WXFFYjljPQ" alt="Cloudy Weather">
+        </div>
+
+        <!-- New Delhi - Foggy Weather -->
+        <div class="weather-card">
+            <div>
+                <h3>New Delhi</h3>
+                <p>Temperature: 30°C</p>
+                <p>Feels Like: 32°C</p>
+                <p>Humidity: 60%</p>
+            </div>
+            <img src="https://imgs.search.brave.com/pPAQ8LcQpkB5Q0tcHNJCVa_AWnREfzHyaKW8Ps6wFAk/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/ZnJlZS1waG90by9h/ZXJpYWwtdmlldy1j/aXR5LWZvZ18xMTUz/LTU0MjIuanBnP3Nl/bXQ9YWlzX2h5YnJp/ZA" alt="Foggy Weather">
+        </div>
+
+        <!-- Goa - Sunny Weather -->
+        <div class="weather-card">
+            <div>
+                <h3>Goa</h3>
+                <p>Temperature: 32°C</p>
+                <p>Feels Like: 34°C</p>
+                <p>Humidity: 80%</p>
+            </div>
+            <img src="https://imgs.search.brave.com/Ar0EI0CQUqsE971286UMPHMDHjJb7CLXgcIJY4hb02Y/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTEz/NTM3ODMwNi9waG90/by9zdW5ueS1kYXku/anBnP3M9NjEyeDYx/MiZ3PTAmaz0yMCZj/PV9wQWxESm9SVktK/WXQ2OHJyY1NqNVdV/Z2p2OGp1LVFnWFpZ/dUdkcE50eGc9" alt="Sunny Weather">
+        </div>
+
+        <!-- Uttarakhand - Snowfall -->
+        <div class="weather-card">
+            <div>
+                <h3>Uttarakhand</h3>
+                <p>Temperature: 5°C</p>
+                <p>Feels Like: -2°C</p>
+                <p>Humidity: 85%</p>
+            </div>
+            <img src="https://imgs.search.brave.com/CcjfdmiUzN7ZZ9ocPdQhBVu8WdMQt-c4ZaFYe1lB_Eg/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMudW5zcGxhc2gu/Y29tL3Bob3RvLTE2/NTU5NjE4NTYyNzct/NjNlNDcyNWQyNGU2/P2ZtPWpwZyZxPTYw/Jnc9MzAwMCZpeGxp/Yj1yYi00LjAuMyZp/eGlkPU0zd3hNakEz/ZkRCOE1IeHpaV0Z5/WTJoOE5ueDhjMjV2/ZHlVeU1HWmhiR3hw/Ym1kOFpXNThNSHg4/TUh4OGZEQT0.jpeg" alt="Snowfall Weather">
+        </div>
+
+        <!-- Mumbai - Rainfall -->
+        <div class="weather-card">
+            <div>
+                <h3>Mumbai</h3>
+                <p>Temperature: 28°C</p>
+                <p>Feels Like: 30°C</p>
+                <p>Humidity: 75%</p>
+            </div>
+            <img src="https://imgs.search.brave.com/hFixB-4guUgnLl1Y2cTm5Ecwk67GI-i4iGbtNxTSZKg/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/ZnJlZS1waG90by9j/bG91ZHktc2t5LWxh/bmRzY2FwZS13YWxs/cGFwZXJfMjMtMjE0/OTEzNDExNi5qcGc_/c2l6ZT02MjYmZXh0/PWpwZw" alt="Rainy Weather">
+        </div>
+
+    </section>
+
+    <section>
+        <a href="https://www.google.com/search?q=weather" target="_blank" class="demo-link">Check Google Weather</a>
+    </section>
+    <section>
+        <button onclick="window.location.href = 'index.html';">Go Back</button>
+    </section>
+
+    <!-- Developer Profile Section -->
+    <section class="developer-profile">
+        <img src="https://imgs.search.brave.com/rHjWZ3V_0Mxu07H5eskK52gH5OUGnKheq5Ll5XxkrIs/rs:fit:500:0:0:0/g:ce/aHR0cDovL20uZ2V0/dHl3YWxscGFwZXJz/LmNvbS93cC1jb250/ZW50L3VwbG9hZHMv/MjAyMy8wNi9QZnAt/QmF0bWFuLmpwZw" alt="Harson Dasouni">
+        <h3>Harson Dasouni</h3>
+        <p>Developer of the Weather App</p>
+    </section>
+</body>
+</html>
